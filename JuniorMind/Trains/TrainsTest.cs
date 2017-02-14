@@ -13,9 +13,10 @@ namespace Trains
             double timeInHours = CalculateTimeInHoursByDistanceAndSpeed(100,100);
             Assert.AreEqual(1,timeInHours);
         }
-        double CalculateTimeInHoursByDistanceAndSpeed(double distanceInKm, double speedInKmPerHours) {
-            double timeInHours = distanceInKm / speedInKmPerHours;
-            return timeInHours;
+        public double CalculateTimeInHoursByDistanceAndSpeed(double distanceInKm, double speedInKmPerHours)
+        {
+            double result = distanceInKm / speedInKmPerHours;
+            return Math.Round(result, 3);
         }
         
 
@@ -25,8 +26,10 @@ namespace Trains
             double remainingDistance = CalculateDistanceMinus2Quarters(100);
             Assert.AreEqual(50,remainingDistance);
         }
-        public double CalculateDistanceMinus2Quarters(double initialDistance) {
-            return initialDistance - 2 * initialDistance * 0.25;
+        public double CalculateDistanceMinus2Quarters(double initialDistance)
+        {
+            double result = initialDistance - (2 * initialDistance * 0.25);
+            return Math.Round(result, 3);
         }
 
 
@@ -36,33 +39,47 @@ namespace Trains
             double distance = CalculateDistanceInKmBySpeedAndTime(100,1);
             Assert.AreEqual(100,distance);
         }
-        public double CalculateDistanceInKmBySpeedAndTime(double speed, double time) {
-            return speed * time;       
+        public double CalculateDistanceInKmBySpeedAndTime(double speed, double time)
+        {
+            double result = speed * time;
+            return Math.Round(result, 3);
         }
 
         [TestMethod]
         public void TestTrainApp() {
-            //double distance = CalculateBirdTotalDistance(120,10);
+            double distance = CalculateBirdTotalDistance(120,10);
+            Assert.AreEqual(60, distance);
 
         }
-        public double CalculateBirdTotalDistance(double distance, double trainSpeed) {
+        public double CalculateBirdTotalDistance(double distance, double trainSpeed)
+        {
             double birdTotalDistance = 0;
             double birdSpeed = 2 * trainSpeed;
             double remainingDistance = CalculateDistanceMinus2Quarters(distance);
             double elapsedTime = 0;
-            
-            while (remainingDistance > 0) {
-                
-                elapsedTime = remainingDistance / (birdSpeed + trainSpeed);
-                birdTotalDistance += CalculateDistanceInKmBySpeedAndTime(birdSpeed,elapsedTime);
-                remainingDistance = remainingDistance -
-                    2 * CalculateDistanceInKmBySpeedAndTime(trainSpeed, elapsedTime);
+
+            while (remainingDistance > 0)
+            {
+                //Console.Write("remainingDistance: ");
+                //Console.WriteLine(remainingDistance);
+                //Console.Write("elapsedTime: ");
+                //Console.WriteLine(elapsedTime);               
+                elapsedTime = Math.Round(remainingDistance / (birdSpeed + trainSpeed), 3);
+
+                //Console.Write("birdTotalDistance: ");
+                //Console.WriteLine(birdTotalDistance);
+                birdTotalDistance = Math.Round(
+                    birdTotalDistance +
+                    CalculateDistanceInKmBySpeedAndTime(birdSpeed, elapsedTime), 3);
+
+
+
+                remainingDistance = Math.Round(remainingDistance -
+                2 * CalculateDistanceInKmBySpeedAndTime(trainSpeed, elapsedTime), 3);
+
+                //Console.ReadKey();
             }
-            return birdTotalDistance;
+            return Math.Round(birdTotalDistance, 3);
         }
-
-        
-
-
     }
 }
