@@ -1,0 +1,5 @@
+D:\code\JuniorMind\JuniorMind\Trains\bin\Debug\Trains.dll
+D:\code\JuniorMind\JuniorMind\Trains\bin\Debug\Trains.pdb
+D:\code\JuniorMind\JuniorMind\Trains\obj\Debug\Trains.csprojResolveAssemblyReference.cache
+D:\code\JuniorMind\JuniorMind\Trains\obj\Debug\Trains.dll
+D:\code\JuniorMind\JuniorMind\Trains\obj\Debug\Trains.pdb

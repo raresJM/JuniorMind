@@ -1,0 +1,6 @@
+Trenuri
+Doua trenuri pornesc în acela?i timp unul catre celalalt cu o viteza constanta de X km/h.
+Când cele doua trenuri au parcurs o patrime din distan?a ini?iala, o pasare aflata pe primul 
+tren porne?te în zbor catre al 2-lea tren cu o viteza de 2X.
+Imediat ce a ajuns la el se întoarce catre primul ?i repeta asta pâna când cele doua trenuri se întâlnesc.
+Care e distan?a zburata de pasare?
