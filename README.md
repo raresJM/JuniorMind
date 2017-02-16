@@ -1,2 +1,2 @@
 # JuniorMind
-Problems by JuniorMind
+Set 002 of Problems by JuniorMind
